@@ -1,0 +1,37 @@
+Inhost Report 
+====================
+
+* Save the inhost excel from the previous day email and change the date. 
+* Login into 158.98.142.235 jump host with your credentails
+* In the jump host desktop you will find the folder named dsg. You can find the DSG server details in comma mode 
+* Right click and run as admin in each server (005,006,007,008 and 009)
+* id and pwd 
+* Eg command -  q eve * * begind=-1 endd=-1 n=** >> C:\Anitha\23_DEC_2021
+* copy and paste the values in the inhost report with date 
+* In the dump sheet --> Insert a row in A column --> =concat(E1,D1) and drag it till end. 
+* In daily, weekly and in Infra insert a row - change the date 
+* Do vlookup in each sheet in a row 2        ( =VLOOKUP(F2,'23-Dec'!A:F,6,0) )
+* In weekly every wednesday and thursday there won't be any backup. But please do not delete the rows as formula is applied. 
+* In DSG we will not trigger any backup's. Only reporting needs to be done.
+* In weekly and infra there won't be any changes.. drag down the formulas in each sheet at the bottom.
+* In daily, apply filter Those N/A's are either DECOM or Tue no backup and Fri no backup. 
+* Do not remove any decom nodes as Kaushik has already informed me to remove it from Jan 2022. 
+* Take down missed/failed/failed 12/severed 
+* For DSG__XIVARCHIVE_2018 which is running in tsm 006, check q eve * * begind=-10 endd=today n=DSG__XIVARCHIVE_2018 f=d which will complete once in 5 days. Other days Missed. 
+* For DSG_ILPFIL03CLUSTER_ECOM, in 007,check q eve * * begind=-5 endd=today n=DSG_ILPFIL03CLUSTER_ECOM f=d check the completion along with schedule start date.
+  Based on the schedule start date, it needs to be marked as inprogress or failed or completed. 
+* For wintel nodes add a new note as "Informed to wintel" and for AIX and linux as applicable. 
+* copy and paste all the details as paste special values. 
+* In the KPI sheet insert a row and copy paste the previous day values and change the date. Since formulas are applied it will fetch the data automatically 
+* Copy the same in Status sheet and mail to the team. 
+* Copy paste the KPI percentage to europe operational dashboard which is in box folder. 
+* On Daily basis, Ping to Sudhakar the previous day KPI percentage as below (on Monday we will ping the value of Friday) 
+
+Hello Sudhakar
+Good day
+KPI as on 21-Dec-2021 is 99.16%
+
+
+ 
+ 
+
